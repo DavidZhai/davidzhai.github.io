@@ -26,6 +26,7 @@
 				var image = document.getElementById('smiley');
 				image.src = "https://i.ytimg.com/vi/2lPcCNyopGI/hqdefault.jpg"
 				var elem = document.getElementById('smiley');
+				elem.width = $(window).width();
 				if (elem.requestFullscreen) {
 				  elem.requestFullscreen();
 				} else if (elem.msRequestFullscreen) {
