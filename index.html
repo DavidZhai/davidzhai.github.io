@@ -1,14 +1,62 @@
 <!DOCTYPE html>
+/* adapted from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img */
+
+
 <html>
-	<head>
-		<title>Where are my glasses?</title>
-	</head>
-	<body>
-	<button type="button"onclick="myFunction()">Where are my glasses? </button>
-	</body>
-	<script>
-	function myFunction() {
-		window.alert("prolly on your face");
-	}
-	</script>
+<head>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+</style>
+</head>
+<body>
+
+<button id="button" type="button">Happy birthday Kiddo!</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" src="scary.jpg">
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('button');
+img.onclick = function(){
+    modal.style.display = "block";
+    captionText.innerHTML = this.alt;
+		var snd = new Audio("scream.mp3");
+		snd.play();
+}
+
+// When the user clicks on <span> (x), close the modal
+modal.onclick = function() {
+    modal.style.display = "none";
+}
+</script>
+
+</body>
 </html>
