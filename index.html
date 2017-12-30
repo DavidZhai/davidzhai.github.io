@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-/* adapted from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img */
-
-
 <html>
 <head>
 <style>
+/* adapted from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img */
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -32,6 +31,7 @@
 <body>
 
 <button id="button" type="button">Happy birthday Kiddo!</button>
+<audio id="audio" src="scream.mp3"></audio>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -44,12 +44,12 @@
 var modal = document.getElementById('myModal');
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('button');
-img.onclick = function(){
+var button = document.getElementById('button');
+button.onclick = function(){
+    var audio = document.getElementById("audio");
+    audio.play();
     modal.style.display = "block";
     captionText.innerHTML = this.alt;
-	var audio = document.getElementById("audio");
-	audio.play();
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -57,7 +57,6 @@ modal.onclick = function() {
     modal.style.display = "none";
 }
 </script>
-<audio id="audio" src="scream.mp3" ></audio>
 
 </body>
 </html>
