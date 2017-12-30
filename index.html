@@ -48,8 +48,8 @@ var img = document.getElementById('button');
 img.onclick = function(){
     modal.style.display = "block";
     captionText.innerHTML = this.alt;
-		var snd = new Audio("scream.mp3");
-		snd.play();
+	var audio = document.getElementById("audio");
+	audio.play();
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -57,6 +57,7 @@ modal.onclick = function() {
     modal.style.display = "none";
 }
 </script>
+<audio id="audio" src="scream.mp3" ></audio>
 
 </body>
 </html>
